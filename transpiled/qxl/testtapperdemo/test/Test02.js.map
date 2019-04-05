@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "sources": [
+    "source/class/qxl/testtapperdemo/test/Test02.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Class",
+    "define",
+    "extend",
+    "dev",
+    "unit",
+    "TestCase",
+    "members",
+    "testEncDecoding",
+    "got",
+    "util",
+    "Base64",
+    "decode",
+    "encode",
+    "split",
+    "assertIdentical",
+    "qxl",
+    "testtapperdemo",
+    "test",
+    "Test02"
+  ],
+  "mappings": ";;;;;;;;;;;;;AAAAA,KAAGC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC,KAAGC,KAAH,CAASC,MAAT,CAAgB,gCAAhB,EAAkD;AAChDC,YAAQN,GAAGO,GAAH,CAAOC,IAAP,CAAYC,QAD4B;AAEhDC,aAAS;AACPC,uBAAiB,2BAAW;AAC1B,YAAIC,MAAMZ,GAAGa,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBf,GAAGa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,SAAtB,CAAtB,EAAwDC,KAAxD,CAA8D,GAA9D,CAAV;AACA,aAAKC,eAAL,CAAqBN,IAAI,CAAJ,CAArB,EAA6B,KAA7B;AACA,aAAKM,eAAL,CAAqBN,IAAI,CAAJ,CAArB,EAA6B,KAA7B;;AAEAA,cAAMZ,GAAGa,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBf,GAAGa,IAAH,CAAQC,MAAR,CAAeE,MAAf,CAAsB,MAAtB,CAAtB,EAAqDC,KAArD,CAA2D,GAA3D,CAAN;AACA,aAAKC,eAAL,CAAqBN,IAAI,CAAJ,CAArB,EAA6B,KAA7B;AACA,aAAKM,eAAL,CAAqBN,IAAI,CAAJ,CAArB,EAA6B,EAA7B;;AAEAA,cAAMZ,GAAGa,IAAH,CAAQC,MAAR,CAAeC,MAAf,CAAsBf,GAAGa,IAAH,CAAQC,MAAR,CAAeE,MAAf,iBAAtB,EAA4DC,KAA5D,CAAkE,GAAlE,CAAN;AACA,aAAKC,eAAL,CAAqBN,IAAI,CAAJ,CAArB,EAA6B,KAA7B;AACA,aAAKM,eAAL,CAAqBN,IAAI,CAAJ,CAArB,EAA6B,WAA7B;AACD;;AAbM;;AAFuC,GAAlD,C;AAAAO,MAAIC,cAAJ,CAAmBC,IAAnB,CAAwBC,MAAxB,CAA+BnB,aAA/B,GAA+CA,aAA/C",
+  "file": "Test02.js",
+  "sourcesContent": [
+    "qx.Class.define(\"qxl.testtapperdemo.test.Test02\", {\n  extend: qx.dev.unit.TestCase,\n  members: {\n    testEncDecoding: function() {\n      var got = qx.util.Base64.decode(qx.util.Base64.encode(\"foo:bar\")).split(\":\");\n      this.assertIdentical(got[0], \"foo\");\n      this.assertIdentical(got[1], \"bar\");\n\n      got = qx.util.Base64.decode(qx.util.Base64.encode(\"foo:\")).split(\":\");\n      this.assertIdentical(got[0], \"foo\");\n      this.assertIdentical(got[1], \"\");\n\n      got = qx.util.Base64.decode(qx.util.Base64.encode(\"foo:\" + null)).split(\":\");\n      this.assertIdentical(got[0], \"foo\");\n      this.assertIdentical(got[1], \"undefined\");\n    }\n\n  }\n\n});\n"
+  ]
+}
